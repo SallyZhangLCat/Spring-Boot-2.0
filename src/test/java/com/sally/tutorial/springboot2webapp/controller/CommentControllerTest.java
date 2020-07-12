@@ -87,7 +87,7 @@ public class CommentControllerTest {
                 .andExpect(model().attribute("starComments", hasSize(1)))
                 .andExpect(model().attribute("starComments", hasItem(
                         allOf(
-                                hasProperty("comment", is("Star Plus")),
+                                hasProperty("comment", is("Test Star")),
                                 hasProperty("type", is(CommentType.STAR))
                         )
                 )));
