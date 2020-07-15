@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.Timestamp;
 import java.util.*;
@@ -34,12 +35,14 @@ public class CommentController {
         model.addAttribute("plusComments", groupedComments.get(CommentType.PLUS));
         model.addAttribute("deltaComments", groupedComments.get(CommentType.DELTA));
         model.addAttribute("starComments", groupedComments.get(CommentType.STAR));
-        return "Comments";
+        return "comment";
     }
 
 
     @PostMapping("/comment")
-    public String createComment(String plusComment, String deltaComment, String starComment) {
+    public String createComment(@RequestParam(name = "plusComment", required = false) String plusComment,
+                                @RequestParam(name = "deltaComment", required = false) String deltaComment,
+                                @RequestParam(name = "starComment", required = false) String starComment) {
         List<Comment> comments = new ArrayList<>();
         if (StringUtils.isNotEmpty(plusComment)) {//plusComment
             comments.add(getComment(plusComment, CommentType.PLUS));
