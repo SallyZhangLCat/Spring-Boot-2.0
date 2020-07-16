@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Retro Board</title>
+    <link rel="stylesheet" type="text/css" href="webjars\font-awesome\5.13.1\css\fontawesome.min-jsf.css">
+    <link rel="stylesheet" type="text/css" href="webjars\bootstrap\4.5.0\css\bootstrap.min.css">
+</head>
+
+<body>
+    <form class="form-inline">
+        <div class="form-row align-items-center">
+            <div class="col-md-4">
+                <i class="fa fa-plus" aria-hidden="true"></i>Pluses
+                <hr/>
+                <div th:each="plusComment : ${plusComments}">
+                    <div class="alert alert-info" role="alert">
+                        <strong></strong>
+                        <p th:text="${plusComment.comment}"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <i class="fa fa-caret-up" aria-hidden="true"></i>Deltas
+                <hr/>
+                <div th:each="deltaComment : ${deltaComments}">
+                    <div class="alert alert-warning" role="alert">
+                        <strong th:text=""></strong>
+                        <p th:text="${deltaComment.comment}"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto">
+                <i class="fa fa-star" aria-hidden="true"></i>Stars
+                <hr/>
+                <div th:each="starComment : ${starComments}">
+                    <div class="alert alert-success" role="alert">
+                        <strong></strong>
+                        <p th:text="${starComment.comment}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row align-items-left">
+            <div class="col-md-4">
+                <input type="submit" class = "btn btn-info" value="Submit Comment"/>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

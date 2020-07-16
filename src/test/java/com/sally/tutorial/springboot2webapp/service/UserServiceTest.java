@@ -1,4 +1,4 @@
-package com.sally.tutorial.springboot2webapp;
+package com.sally.tutorial.springboot2webapp.service;
 
 import com.sally.tutorial.springboot2webapp.model.User;
 import com.sally.tutorial.springboot2webapp.repo.UserRepository;

@@ -1,4 +1,4 @@
-package com.sally.tutorial.springboot2webapp;
+package com.sally.tutorial.springboot2webapp.service;
 
 import com.sally.tutorial.springboot2webapp.model.Comment;
 import com.sally.tutorial.springboot2webapp.model.CommentType;
